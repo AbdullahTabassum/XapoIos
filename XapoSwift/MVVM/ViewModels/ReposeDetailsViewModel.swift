@@ -13,10 +13,13 @@ class RepoDetailsViewModel {
     
     var selectedRepo : Variable<GitRepo> = Variable<GitRepo>( GitRepo( user: GitUser() ) )
     
+    var imageURL : URL
+    
     init( selectedRepo : GitRepo ) {
         
         self.selectedRepo.value = selectedRepo
         
+        imageURL = URL( string : selectedRepo.user.userAvatarURL)!
     }
     
 }

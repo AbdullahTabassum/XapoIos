@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.0)
   - Differentiator (3.0.2)
+  - Kingfisher (4.6.3)
   - Outlaw (1.1.0)
   - Result (3.0.0)
   - RxAlamofire (4.1.0):
@@ -21,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.5.0)
+  - Kingfisher (~> 4.0)
   - Outlaw
   - Result (~> 3.0.0)
   - RxAlamofire
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  Kingfisher: 98e6d5b5e807645743e8ed5ececd25d688d38452
   Outlaw: 00b32d73bee9a62b5150683f70c491d3307d999f
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
@@ -42,6 +45,6 @@ SPEC CHECKSUMS:
   Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
 
-PODFILE CHECKSUM: 3797f91eb2db7c203f5fccc05bff3e06c6643b35
+PODFILE CHECKSUM: d2106c55bd30976953baced6788552d003149cab
 
 COCOAPODS: 1.4.0

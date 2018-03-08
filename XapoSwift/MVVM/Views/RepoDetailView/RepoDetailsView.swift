@@ -12,12 +12,11 @@ import UIKit
 class RepoDetailsView : UIView {
     
     var userName : UILabel
-    //var userImage
+    var userImage : UIImageView
     var projectDescription : UILabel
     var projectName : UILabel
     var stars : UILabel
     var forks : UILabel
-    
     
     required init(coder aDecoder: NSCoder) {
         fatalError("This class does not support NSCoding")
@@ -31,6 +30,7 @@ class RepoDetailsView : UIView {
         self.stars = UILabel()
         self.forks = UILabel()
         self.projectDescription = UILabel()
+        self.userImage = UIImageView()
         
         super.init(frame: frame)
         
@@ -92,8 +92,25 @@ extension RepoDetailsView {
         
         self.addConstraint(NSLayoutConstraint(item: projectDescription, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0));
         
-        self.addConstraint(NSLayoutConstraint(item: projectDescription, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: -20.0));
-      
+        self.addConstraint(NSLayoutConstraint(item: projectDescription, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: -20.0))
+        
+        //user image
+        userImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(userImage)
+        
+//        var newFrame : CGRect = self.userImage.frame;
+//
+//        newFrame.size.width = 50;
+//
+//        newFrame.size.height = 50;
+        
+        //self.userImage.frame = newFrame
+        
+        self.addConstraint(NSLayoutConstraint(item: userImage, attribute: .top, relatedBy: .equal, toItem: projectDescription, attribute: .bottom, multiplier: 1.0, constant: 10.0));
+        
+        self.addConstraint(NSLayoutConstraint(item: userImage, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0));
+        
         
     }
     

@@ -9,6 +9,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import Kingfisher
 
 class RepoDetailsViewController : UIViewController {
     
@@ -57,6 +58,9 @@ class RepoDetailsViewController : UIViewController {
             
             
         }).disposed(by: bag)
+        
+        //set up image view
+        self.repoView.userImage.kf.setImage(with: viewModel.imageURL)
     }
     
     override func willMove(toParentViewController parent: UIViewController?) {

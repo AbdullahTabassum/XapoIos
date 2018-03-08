@@ -18,5 +18,6 @@ target 'XapoSwift' do
     pod 'RxAlamofire'
     pod 'Outlaw'
     pod 'Result', '~> 3.0.0'
+    pod 'Kingfisher', '~> 4.0'
 
 end
