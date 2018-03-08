@@ -44,7 +44,7 @@ extension RepoDetailsView {
     
     func setUpViewLayout() {
         
-        self.backgroundColor = UIColor.brown
+        self.backgroundColor = UIColor.white
     
         //specifiy the dimensions and positions for the search bar and table view
         projectName.translatesAutoresizingMaskIntoConstraints = false
@@ -81,6 +81,11 @@ extension RepoDetailsView {
         
         //description
         projectDescription.translatesAutoresizingMaskIntoConstraints = false
+        
+        projectDescription.numberOfLines = 15
+        
+        projectDescription.textAlignment = NSTextAlignment.center
+        
         self.addSubview(projectDescription);
         
         self.addConstraint(NSLayoutConstraint(item: projectDescription, attribute: .top, relatedBy: .equal, toItem: forks, attribute: .bottom, multiplier: 1.0, constant: 10.0));

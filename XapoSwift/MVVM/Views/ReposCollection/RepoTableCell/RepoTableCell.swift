@@ -100,22 +100,10 @@ extension RepoTableCell {
         return "RepoTableCell"
     }
     
-    public static var bundle: Bundle {
-        return Bundle(for: RepoTableCell.self)
-    }
-    
-    public static var nib: UINib {
-        return UINib(nibName: RepoTableCell.cellID, bundle: RepoTableCell.bundle)
-    }
-    
     public static func register(with tableView: UITableView) {
         
         tableView.register(RepoTableCell.self, forCellReuseIdentifier: RepoTableCell.cellID)
         
-    }
-    
-    public static func loadFromNib(owner: Any?) -> RepoTableCell {
-        return bundle.loadNibNamed(RepoTableCell.cellID, owner: owner, options: nil)?.first as! RepoTableCell
     }
     
 }

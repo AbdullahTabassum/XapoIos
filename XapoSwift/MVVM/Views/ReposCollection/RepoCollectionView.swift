@@ -47,8 +47,6 @@ class RepoCollectionView : UIView {
     
     private func setUpViewLayout() {
         
-        self.backgroundColor = UIColor.brown
-        
         //specifiy the dimensions and positions for the search bar and table view
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(searchBar);
@@ -64,7 +62,6 @@ class RepoCollectionView : UIView {
         //tableView setup
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.backgroundColor = UIColor.blue
         self.addSubview(tableView)
         
         self.addConstraint(NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: searchBar, attribute: .bottom, multiplier: 1.0, constant: 0.0));

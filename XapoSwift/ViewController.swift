@@ -20,7 +20,7 @@ class ViewController : UIViewController {
         
         super.viewDidLoad()
         
-        Thread.sleep(forTimeInterval: 2)
+        Thread.sleep(forTimeInterval: 1)
         
         let argument: [String: CGFloat] = ["barHeight": (self.navigationController?.navigationBar.frame.height)!]
         
