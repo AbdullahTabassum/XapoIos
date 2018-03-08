@@ -49,7 +49,9 @@ extension RepoTableCell {
         
         //project name
         projectNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         projectNameLabel.numberOfLines = 0
+        
         projectNameLabel.lineBreakMode = .byWordWrapping
     
         projectNameLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 5).isActive = true
@@ -60,6 +62,7 @@ extension RepoTableCell {
         
         //stars label
         projectStarsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         projectStarsLabel.numberOfLines = 0
         
         projectStarsLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
@@ -70,6 +73,7 @@ extension RepoTableCell {
         
         //projectDescriptionLabel
         projectDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         projectDescriptionLabel.numberOfLines = 0
         
         projectDescriptionLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true

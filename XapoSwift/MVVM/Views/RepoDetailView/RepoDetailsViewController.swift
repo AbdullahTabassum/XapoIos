@@ -48,6 +48,7 @@ class RepoDetailsViewController : UIViewController {
             //update view
             print("DetailsView: this is the selected repo : \(repo.projectName)")
             
+            //todo: add this set to a maker cell or dependency management tool
             self?.repoView.projectDescription.text = repo.description
             self?.repoView.forks.text = " Forks: " + String(repo.forks)
             self?.repoView.projectName.text = repo.projectName

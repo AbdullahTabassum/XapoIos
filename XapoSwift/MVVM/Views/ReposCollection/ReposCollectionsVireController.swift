@@ -22,8 +22,6 @@ class ReposCollectionViewController: UIViewController {
     
     var viewModel : RepoCellectionViewModel
     
-    //let dataSource = Observable<[String]>.just(["first element", "second element", "third element"])
-    
     init( view : RepoCollectionView, viewModel : RepoCellectionViewModel, nvManager: NavigationManager) {
         
         self.repoView = view
@@ -59,8 +57,17 @@ class ReposCollectionViewController: UIViewController {
         
         self.edgesForExtendedLayout = []
         
+        repoView.searchBar.rx.text.orEmpty
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe({ [weak self] query in
+                
+                self?.viewModel.filterGitRepos(criteria: (query.element)!)
+                
+            }).disposed(by: bag)
+        
         //add the listeners and datasource
-                viewModel.gitRepos.asObservable().bind(to: repoView.tableView.rx.items(cellIdentifier: RepoTableCell.cellID)) { index, model, cell  in
+                viewModel.filteredGitRepos.asObservable().bind(to: repoView.tableView.rx.items(cellIdentifier: RepoTableCell.cellID)) { index, model, cell  in
 
                     if let cellNew = cell as? RepoTableCell {
 
@@ -76,7 +83,7 @@ class ReposCollectionViewController: UIViewController {
 
                     }
 
-                    }.disposed(by: bag)
+                }.disposed(by: bag)
         
     }
 
@@ -87,11 +94,6 @@ class ReposCollectionViewController: UIViewController {
         
     }
     
-//    func next(with repo: GitRepo) {
-//        let args = ["repo": repo]
-//        navigationManager!.next(arguments: args)
-//    }
-
     override func willMove(toParentViewController parent: UIViewController?) {
         super.willMove(toParentViewController:parent)
         if parent == nil {
@@ -106,9 +108,7 @@ extension ReposCollectionViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let  selectedRepo = self.viewModel.gitRepos.value[indexPath.row]
-        
-        print("a repo was selectd: \(selectedRepo.projectName)")
+        let  selectedRepo = self.viewModel.filteredGitRepos.value[indexPath.row]
         
         //navigate to the next page
         self.navigationManager.next(arguments: ["selectedRepo" : selectedRepo])

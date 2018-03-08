@@ -14,7 +14,7 @@ import RxDataSources
 
 class RepoCollectionView : UIView {
         
-    fileprivate let searchBar : UISearchBar!
+    let searchBar : UISearchBar!
     
     public var tableView : UITableView!
     
